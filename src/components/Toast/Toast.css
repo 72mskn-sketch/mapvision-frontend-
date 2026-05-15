@@ -1,0 +1,11 @@
+.toast {
+  position:fixed; bottom:82px; right:20px; z-index:300;
+  background:var(--surface2); border:1px solid var(--accent);
+  border-radius:10px; padding:10px 16px; font-size:.84rem;
+  color:var(--accent); box-shadow:var(--shadow-sm); max-width:280px;
+  animation:fadeUp .22s ease, fadeOut .3s ease 2.5s forwards;
+  pointer-events:none;
+}
+@media(max-width:600px){
+  .toast{ bottom:76px; right:12px; left:12px; max-width:none; text-align:center; }
+}
