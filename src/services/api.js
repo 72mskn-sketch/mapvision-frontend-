@@ -2,7 +2,7 @@
 // Vite proxy forwards /api → http://localhost:5000/api during dev.
 // In production, set VITE_API_URL in .env and replace BASE_URL.
 
-const BASE = '/api';
+const BASE = 'https://mapvision-backend.onrender.com/api';
 
 async function req(url) {
   const res = await fetch(url);
