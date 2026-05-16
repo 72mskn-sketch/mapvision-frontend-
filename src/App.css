@@ -1,0 +1,57 @@
+/* ─── Design Tokens ─── */
+:root {
+  --bg:          #0d1117;
+  --surface:     #161b22;
+  --surface2:    #21262d;
+  --surface3:    #2d333b;
+  --border:      #30363d;
+  --accent:      #3fb950;
+  --accent-h:    #56d364;
+  --blue:        #58a6ff;
+  --blue-h:      #79c0ff;
+  --danger:      #f85149;
+  --warning:     #e3b341;
+  --purple:      #d2a8ff;
+  --text:        #e6edf3;
+  --text2:       #c9d1d9;
+  --muted:       #8b949e;
+  --panel-w:     370px;
+  --header-h:    58px;
+  --radius:      14px;
+  --radius-sm:   8px;
+  --pill:        999px;
+  --shadow:      0 8px 32px rgba(0,0,0,.55);
+  --shadow-sm:   0 4px 16px rgba(0,0,0,.4);
+  --blur:        blur(20px);
+  --blur-sm:     blur(12px);
+  --ease:        all .15s ease;
+  --ease-med:    all .25s ease;
+}
+
+/* ─── Leaflet dark tint ─── */
+.leaflet-tile-pane { filter: brightness(.82) saturate(.65) hue-rotate(195deg); }
+.leaflet-container  { background: var(--bg); font-family: 'DM Sans', sans-serif; }
+
+/* ─── Scrollbar ─── */
+* { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+*::-webkit-scrollbar { width: 4px; }
+*::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* ─── Animations ─── */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+@keyframes popIn    { from{opacity:0;transform:translateX(-50%) scale(.94)} to{opacity:1;transform:translateX(-50%) scale(1)} }
+@keyframes slideIn  { from{opacity:0;transform:translateX(8px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeOut  { to{opacity:0;transform:translateY(4px)} }
+
+/* ─── Utilities ─── */
+.section-label {
+  font-family: 'Syne', sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+@media (max-width:600px) { :root { --panel-w: 100vw; } }

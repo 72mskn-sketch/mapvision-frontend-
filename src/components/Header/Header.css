@@ -1,0 +1,51 @@
+.hdr {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  height:var(--header-h);
+  display:flex; align-items:center; gap:12px; padding:0 16px;
+  background:rgba(13,17,23,.9); backdrop-filter:var(--blur);
+  border-bottom:1px solid var(--border);
+}
+.hdr-logo {
+  font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:800;
+  color:var(--accent); white-space:nowrap; display:flex; align-items:center; gap:7px;
+  letter-spacing:-.5px; flex-shrink:0;
+}
+.hdr-logo span { color:var(--blue); }
+
+.hdr-search {
+  flex:1; max-width:540px; position:relative;
+}
+.hdr-search-icon {
+  position:absolute; left:13px; top:50%; transform:translateY(-50%);
+  color:var(--muted); pointer-events:none;
+}
+.hdr-search input {
+  width:100%; padding:8px 16px 8px 38px;
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--pill); color:var(--text);
+  font-size:.88rem; font-family:'DM Sans',sans-serif; outline:none;
+  transition:var(--ease);
+}
+.hdr-search input::placeholder { color:var(--muted); }
+.hdr-search input:focus { border-color:var(--blue); background:var(--surface3); }
+.hdr-search button {
+  position:absolute; right:5px; top:50%; transform:translateY(-50%);
+  background:var(--blue); color:#000; border:none; cursor:pointer;
+  border-radius:var(--pill); padding:5px 14px; font-size:.78rem;
+  font-weight:600; font-family:'DM Sans',sans-serif; transition:var(--ease);
+}
+.hdr-search button:hover:not(:disabled) { background:var(--blue-h); }
+.hdr-search button:disabled { opacity:.55; cursor:not-allowed; }
+
+.hdr-actions { display:flex; gap:8px; flex-shrink:0; }
+.hbtn {
+  background:var(--surface2); border:1px solid var(--border); color:var(--text);
+  border-radius:var(--pill); padding:7px 13px; font-size:.78rem; font-weight:500;
+  cursor:pointer; font-family:'DM Sans',sans-serif; white-space:nowrap;
+  transition:var(--ease); display:flex; align-items:center; gap:6px;
+}
+.hbtn:hover { border-color:var(--blue); color:var(--blue); }
+.hbtn.on { background:var(--blue); color:#000; border-color:var(--blue); }
+
+@media(max-width:768px) { .hbtn .lbl { display:none; } .hbtn { padding:7px 10px; } }
+@media(max-width:480px) { .hbtn:not(:first-child) { display:none; } .hdr-search { max-width:none; } }

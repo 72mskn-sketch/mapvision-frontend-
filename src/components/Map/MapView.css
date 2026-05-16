@@ -1,0 +1,23 @@
+.mapview-root { position:fixed; inset:0; z-index:0; }
+
+.mv-pin {
+  width:42px; height:42px;
+  background:rgba(22,27,34,.95);
+  border:2px solid #58a6ff;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,.5);
+  cursor:pointer;
+  transition:transform .2s, border-color .2s;
+}
+.mv-pin:hover { border-color:#3fb950; transform:rotate(-45deg) scale(1.1); }
+.mv-pin span  { transform:rotate(45deg); font-size:1.15rem; line-height:1; }
+
+.mv-user-pin {
+  width:16px; height:16px;
+  background:#58a6ff;
+  border:3px solid #fff;
+  border-radius:50%;
+  box-shadow:0 0 0 6px rgba(88,166,255,.25);
+}

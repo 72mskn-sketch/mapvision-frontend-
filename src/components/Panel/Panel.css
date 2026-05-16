@@ -1,0 +1,54 @@
+.panel {
+  position:fixed; left:0; top:var(--header-h); bottom:0;
+  width:var(--panel-w); z-index:90;
+  background:rgba(13,17,23,.94); backdrop-filter:var(--blur);
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:translateX(0); transition:transform .3s ease;
+}
+.panel.closed { transform:translateX(-100%); }
+
+.panel-tabs { display:flex; border-bottom:1px solid var(--border); flex-shrink:0; }
+.ptab {
+  flex:1; padding:12px 6px; text-align:center; cursor:pointer;
+  font-size:.8rem; font-weight:500; color:var(--muted);
+  border:none; background:none; border-bottom:2px solid transparent;
+  font-family:'DM Sans',sans-serif; transition:var(--ease);
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.ptab:hover { color:var(--text); }
+.ptab.active { color:var(--blue); border-bottom-color:var(--blue); }
+.badge {
+  background:var(--danger); color:#fff; border-radius:var(--pill);
+  font-size:.6rem; font-weight:700; padding:1px 5px; line-height:1.4;
+}
+
+.panel-body { flex:1; overflow-y:auto; padding:14px; display:flex; flex-direction:column; gap:10px; }
+
+.cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.cat-btn {
+  background:var(--surface2); border:1px solid var(--border); color:var(--text);
+  border-radius:var(--radius-sm); padding:9px 6px; font-size:.76rem;
+  font-family:'DM Sans',sans-serif; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:4px; transition:var(--ease);
+}
+.cat-btn span { font-size:1.2rem; }
+.cat-btn:hover { border-color:var(--blue); color:var(--blue); }
+
+.empty { text-align:center; padding:32px 16px; color:var(--muted); font-size:.84rem; line-height:1.7; }
+.empty span { font-size:2rem; display:block; margin-bottom:8px; }
+
+.saved-row {
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius); padding:12px 14px;
+  display:flex; align-items:center; gap:10px; animation:fadeUp .2s ease;
+}
+.rm-btn {
+  background:none; border:1px solid var(--border); color:var(--muted);
+  border-radius:50%; width:26px; height:26px; cursor:pointer;
+  font-size:.74rem; display:flex; align-items:center; justify-content:center;
+  transition:var(--ease); flex-shrink:0;
+}
+.rm-btn:hover { border-color:var(--danger); color:var(--danger); }
+
+@media(max-width:600px) { .panel { bottom:66px; } }
